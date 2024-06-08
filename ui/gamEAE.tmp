@@ -1,0 +1,143 @@
+[gd_scene load_steps=13 format=3 uid="uid://dgohtkb6el5i2"]
+
+[ext_resource type="Script" path="res://UI/game_ui.gd" id="1_coikn"]
+[ext_resource type="Texture2D" uid="uid://t8ie8a2uehle" path="res://addons/tiny_swords/Tiny Swords (Update 010)/UI/Banners/Banner_Horizontal.png" id="1_etphd"]
+[ext_resource type="Texture2D" uid="uid://851jfhf1olcg" path="res://addons/tiny_swords/Tiny Swords (Update 010)/Resources/Resources/M_Idle_(NoShadow).png" id="3_6284d"]
+[ext_resource type="Texture2D" uid="uid://f70mmvpgpvjs" path="res://addons/tiny_swords/Tiny Swords (Update 010)/Factions/Knights/Troops/Dead/Dead.png" id="4_sb0fw"]
+
+[sub_resource type="SystemFont" id="SystemFont_ied0h"]
+font_names = PackedStringArray("Consolas")
+font_weight = 999
+
+[sub_resource type="LabelSettings" id="LabelSettings_o2un7"]
+font = SubResource("SystemFont_ied0h")
+font_size = 32
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_8sqoa"]
+texture = ExtResource("1_etphd")
+texture_margin_left = 33.0
+texture_margin_top = 17.0
+texture_margin_right = 32.0
+texture_margin_bottom = 46.0
+axis_stretch_horizontal = 2
+axis_stretch_vertical = 2
+region_rect = Rect2(31, 46.5, 129, 129.5)
+
+[sub_resource type="SystemFont" id="SystemFont_rj6gr"]
+font_names = PackedStringArray("Consolas")
+font_weight = 999
+msdf_pixel_range = 12
+msdf_size = 47
+
+[sub_resource type="Theme" id="Theme_prxn6"]
+default_font = SubResource("SystemFont_rj6gr")
+
+[sub_resource type="LabelSettings" id="LabelSettings_oot2x"]
+font_size = 32
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f6ve7"]
+atlas = ExtResource("3_6284d")
+region = Rect2(40, 56, 56, 40)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ppfx6"]
+atlas = ExtResource("4_sb0fw")
+region = Rect2(416, 32, 64, 64)
+
+[node name="GameUI" type="CanvasLayer"]
+script = ExtResource("1_coikn")
+
+[node name="TimerLabel" type="Label" parent="."]
+unique_name_in_owner = true
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -47.0
+offset_top = -303.5
+offset_right = -4.0
+offset_bottom = -280.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "00:00
+"
+label_settings = SubResource("LabelSettings_o2un7")
+
+[node name="Panel" type="Panel" parent="."]
+offset_left = 925.0
+offset_top = 7.0
+offset_right = 1143.0
+offset_bottom = 80.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_8sqoa")
+
+[node name="MeatLabel" type="Label" parent="Panel"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.725
+anchor_top = 0.336
+anchor_right = 0.725
+anchor_bottom = 0.336
+offset_left = -27.0499
+offset_top = -16.528
+offset_right = 26.9501
+offset_bottom = 16.472
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_prxn6")
+text = "30
+"
+label_settings = SubResource("LabelSettings_oot2x")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MeatTextureRect" type="TextureRect" parent="Panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.557
+anchor_top = 0.288
+anchor_right = 0.557
+anchor_bottom = 0.288
+offset_left = -16.426
+offset_top = -12.024
+offset_right = 49.574
+offset_bottom = 35.976
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.5, 0.5)
+texture = SubResource("AtlasTexture_f6ve7")
+
+[node name="KillsLabel" type="Label" parent="Panel"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.317
+anchor_top = 0.349
+anchor_right = 0.317
+anchor_bottom = 0.349
+offset_left = -27.106
+offset_top = -16.477
+offset_right = 26.894
+offset_bottom = 16.523
+grow_vertical = 2
+theme = SubResource("Theme_prxn6")
+text = "30"
+label_settings = SubResource("LabelSettings_oot2x")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="KillsTextureRect" type="TextureRect" parent="Panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.186
+anchor_top = 0.288
+anchor_right = 0.186
+anchor_bottom = 0.288
+offset_left = -20.548
+offset_top = -15.024
+offset_right = 45.452
+offset_bottom = 48.976
+grow_vertical = 2
+scale = Vector2(0.5, 0.5)
+texture = SubResource("AtlasTexture_ppfx6")

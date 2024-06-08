@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://dq0ggwktf3ru5"]
+
+[ext_resource type="PackedScene" uid="uid://d0s664lw3yfed" path="res://misc/skulll.tscn" id="1_7g7y0"]
+
+[node name="Skulll" instance=ExtResource("1_7g7y0")]
+position = Vector2(592, 478)
+scale = Vector2(3, 3)

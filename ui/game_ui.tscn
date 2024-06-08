@@ -1,0 +1,181 @@
+[gd_scene load_steps=13 format=3 uid="uid://dgohtkb6el5i2"]
+
+[ext_resource type="Script" path="res://ui/game_ui.gd" id="1_empm5"]
+[ext_resource type="Texture2D" uid="uid://t8ie8a2uehle" path="res://addons/tiny_swords/Tiny Swords (Update 010)/UI/Banners/Banner_Horizontal.png" id="2_gjnft"]
+[ext_resource type="Texture2D" uid="uid://851jfhf1olcg" path="res://addons/tiny_swords/Tiny Swords (Update 010)/Resources/Resources/M_Idle_(NoShadow).png" id="3_27xy1"]
+[ext_resource type="Texture2D" uid="uid://f70mmvpgpvjs" path="res://addons/tiny_swords/Tiny Swords (Update 010)/Factions/Knights/Troops/Dead/Dead.png" id="4_hwkr1"]
+
+[sub_resource type="SystemFont" id="SystemFont_ied0h"]
+font_names = PackedStringArray("Consolas")
+font_weight = 999
+subpixel_positioning = 0
+
+[sub_resource type="LabelSettings" id="LabelSettings_o2un7"]
+font = SubResource("SystemFont_ied0h")
+font_size = 32
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_8sqoa"]
+texture = ExtResource("2_gjnft")
+texture_margin_left = 33.0
+texture_margin_top = 17.0
+texture_margin_right = 32.0
+texture_margin_bottom = 46.0
+axis_stretch_horizontal = 2
+axis_stretch_vertical = 2
+region_rect = Rect2(31, 46.5, 129, 129.5)
+
+[sub_resource type="SystemFont" id="SystemFont_rj6gr"]
+font_names = PackedStringArray("Consolas")
+font_weight = 999
+subpixel_positioning = 0
+msdf_pixel_range = 12
+msdf_size = 47
+
+[sub_resource type="Theme" id="Theme_prxn6"]
+default_font = SubResource("SystemFont_rj6gr")
+
+[sub_resource type="LabelSettings" id="LabelSettings_oot2x"]
+font_size = 32
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f6ve7"]
+atlas = ExtResource("3_27xy1")
+region = Rect2(40, 56, 56, 40)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ppfx6"]
+atlas = ExtResource("4_hwkr1")
+region = Rect2(416, 32, 64, 64)
+
+[node name="GameUI" type="CanvasLayer"]
+script = ExtResource("1_empm5")
+
+[node name="TimerLabel" type="Label" parent="."]
+unique_name_in_owner = true
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -40.0
+offset_top = 27.0
+offset_right = 50.0
+offset_bottom = 60.0
+grow_horizontal = 2
+text = "00:00
+"
+label_settings = SubResource("LabelSettings_o2un7")
+
+[node name="Panel" type="Panel" parent="."]
+offset_left = 758.0
+offset_top = 7.0
+offset_right = 1143.0
+offset_bottom = 80.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_8sqoa")
+
+[node name="MeatLabel" type="Label" parent="Panel"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.725
+anchor_top = 0.336
+anchor_right = 0.725
+anchor_bottom = 0.336
+offset_left = 27.875
+offset_top = -16.528
+offset_right = 81.875
+offset_bottom = 16.472
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_prxn6")
+text = "30
+"
+label_settings = SubResource("LabelSettings_oot2x")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MeatTextureRect" type="TextureRect" parent="Panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.557
+anchor_top = 0.288
+anchor_right = 0.557
+anchor_bottom = 0.288
+offset_left = 63.555
+offset_top = -12.024
+offset_right = 129.555
+offset_bottom = 35.976
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.5, 0.5)
+texture = SubResource("AtlasTexture_f6ve7")
+
+[node name="barra" type="Label" parent="Panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.725
+anchor_top = 0.336
+anchor_right = 0.725
+anchor_bottom = 0.336
+offset_left = -142.125
+offset_top = -16.528
+offset_right = -88.125
+offset_bottom = 16.472
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_prxn6")
+text = "/
+"
+label_settings = SubResource("LabelSettings_oot2x")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="KillsLabel" type="Label" parent="Panel"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.317
+anchor_top = 0.349
+anchor_right = 0.317
+anchor_bottom = 0.349
+offset_left = -60.045
+offset_top = -15.477
+offset_right = 29.955
+offset_bottom = 17.523
+grow_vertical = 2
+theme = SubResource("Theme_prxn6")
+text = "10000"
+label_settings = SubResource("LabelSettings_oot2x")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="FaseKillsLabel" type="Label" parent="Panel"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.317
+anchor_top = 0.349
+anchor_right = 0.317
+anchor_bottom = 0.349
+offset_left = 53.955
+offset_top = -16.477
+offset_right = 143.955
+offset_bottom = 16.523
+grow_vertical = 2
+theme = SubResource("Theme_prxn6")
+text = "10000"
+label_settings = SubResource("LabelSettings_oot2x")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="KillsTextureRect" type="TextureRect" parent="Panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.186
+anchor_top = 0.288
+anchor_right = 0.186
+anchor_bottom = 0.288
+offset_left = -45.61
+offset_top = -15.024
+offset_right = 20.39
+offset_bottom = 48.976
+grow_vertical = 2
+scale = Vector2(0.5, 0.5)
+texture = SubResource("AtlasTexture_ppfx6")

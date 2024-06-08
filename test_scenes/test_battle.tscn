@@ -1,0 +1,30 @@
+[gd_scene load_steps=5 format=3 uid="uid://bnesxlhunenhn"]
+
+[ext_resource type="PackedScene" uid="uid://d30dvfnvwh68n" path="res://player/Player.tscn" id="1_t3dox"]
+[ext_resource type="PackedScene" uid="uid://c1tiyxolek6ss" path="res://enemies/sheep.tscn" id="2_ek61t"]
+[ext_resource type="PackedScene" uid="uid://crsdjfy48bvod" path="res://enemies/pawn.tscn" id="3_7h732"]
+[ext_resource type="PackedScene" uid="uid://bgtaqmceoi613" path="res://enemies/goblin.tscn" id="4_ud75f"]
+
+[node name="TestBattle" type="Node2D"]
+position = Vector2(-319, -31)
+
+[node name="Player" parent="." instance=ExtResource("1_t3dox")]
+position = Vector2(451, 388)
+
+[node name="Sheep" parent="." instance=ExtResource("2_ek61t")]
+position = Vector2(1306, 882)
+
+[node name="Sheep2" parent="." instance=ExtResource("2_ek61t")]
+position = Vector2(1714, 243)
+
+[node name="Sheep3" parent="." instance=ExtResource("2_ek61t")]
+position = Vector2(1588, 348)
+
+[node name="Pawn" parent="." instance=ExtResource("3_7h732")]
+position = Vector2(1737, 476)
+
+[node name="Pawn2" parent="." instance=ExtResource("3_7h732")]
+position = Vector2(1764, 799)
+
+[node name="Goblin" parent="." instance=ExtResource("4_ud75f")]
+position = Vector2(1611, 187)
